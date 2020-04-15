@@ -1,0 +1,16 @@
+{
+	"packageName": "Ambient Weather",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "1.0",
+	"dateReleased": "2020-01-01",
+	"apps" : [
+		{
+			"id" : "34b779ce-9914-41ad-a981-fe70e9cf8d7d",
+			"name": "Ambient-Weather-API",
+			"namespace": ""CordMaster", ",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crmpp/master/Ambient-Weather/Ambient-Weather-API.groovy",
+			"required": true
+		}
+	]
+}
