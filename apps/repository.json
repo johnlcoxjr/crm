@@ -1,0 +1,13 @@
+{
+  "author": "John Cox",
+  "gitHubUrl": "https://github.com/johnlcoxjr",
+  "payPalUrl": "",
+  "packages": [
+    {
+      "name": "App Name",
+      "category": "Category",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/repository/master/packageManifest.json",
+      "description": "words"
+    }
+  ]
+}

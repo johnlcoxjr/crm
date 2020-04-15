@@ -45,7 +45,7 @@ preferences {
 }
 
 import groovy.transform.Field
-@Field static String repositoryListing = "https://raw.githubusercontent.com/johnlcoxjr/crmp/master/repositories.json"
+@Field static String repositoryListing = "https://raw.githubusercontent.com/johnlcoxjr/crm/master/repositories.json"
 @Field static List categories = [] 
 @Field static List allPackages = []
 @Field static groovy.json.internal.LazyMap listOfRepositories = [:]

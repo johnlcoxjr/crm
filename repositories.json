@@ -1,0 +1,11 @@
+{
+	"repositories": [
+		{
+			"name": johnlcoxjr",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/repository.json"
+		}
+	],
+	"CRM": {
+		"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/CRM/packageManifest.json"
+	}
+}
