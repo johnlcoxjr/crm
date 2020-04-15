@@ -6,7 +6,7 @@
     {
       "name": "App Name",
       "category": "Category",
-      "location": "https://raw.githubusercontent.com/johnlcoxjr/repository/master/packageManifest.json",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/packageManifest.json",
       "description": "words"
     }
   ]

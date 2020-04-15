@@ -9,7 +9,7 @@
 			"id" : "34b779ce-9914-41ad-a981-fe70e9cf8d7d",
 			"name": "Ambient-Weather-API",
 			"namespace": ""CordMaster", ",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crmpp/master/Ambient-Weather/Ambient-Weather-API.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/Ambient-Weather/Ambient-Weather-API.groovy",
 			"required": true
 		}
 	]
