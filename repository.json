@@ -1,0 +1,13 @@
+{
+  "author": "John Cox",
+  "gitHubUrl": "https://github.com/johnlcoxjr/crm",
+  "payPalUrl": "",
+  "packages": [
+    {
+      "name": "Ambient Weather",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Ambient-Weather/packageManifest.json",
+      "description": "Ambient Weather"
+    }
+  ]
+}
