@@ -134,7 +134,7 @@ def prefOptions() {
             href(name: "prefPkgUpdate", title: "Update", required: false, page: "prefPkgUpdate", description: "Check for updates for your installed packages.")
 			href(name: "prefPkgMatchUp", title: "Match Up", required: false, page: "prefPkgMatchUp", description: "Match up the apps and drivers you already have installed with packages available so that you can use the package manager to get future updates.")
 			href(name: "prefPkgView", title: "View Apps and Drivers", required: false, page: "prefPkgView", description: "View the apps and drivers that are managed by packages.")
-			href(name: "prefSettings", title: "Package Manager Settings", required: false, page: "prefSettings", params: [force:true], description: "Modify Hubitat Package Manager Settings.")
+			href(name: "prefSettings", title: "CRM Settings", required: false, page: "prefSettings", params: [force:true], description: "Modify CRM Settings.")
 		}
 		section {
 			paragraph "<hr>"
@@ -149,7 +149,7 @@ def prefSettings(params) {
 	
 	updateRepositoryListing()
 
-	installHPMManifest()
+	installCRMManifest()
 	if (app.getInstallationState() == "COMPLETE" && params?.force != true) 
 		return prefOptions()
 	else {
@@ -159,11 +159,11 @@ def prefSettings(params) {
 		return dynamicPage(name: "prefSettings", title: "Hubitat Connection Configuration", nextPage: "prefOptions", install: showInstall, uninstall: false) {
 			section ("Hub Security") {
 				paragraph "In order to automatically install apps and drivers you must specify your Hubitat admin username and password if Hub Security is enabled."
-				input "hpmSecurity", "bool", title: "Hub Security Enabled", submitOnChange: true
-				if (hpmSecurity)
+				input "crmSecurity", "bool", title: "Hub Security Enabled", submitOnChange: true
+				if (crmSecurity)
 				{
-					input "hpmUsername", "string", title: "Hub Security username", required: true
-					input "hpmPassword", "password", title: "Hub Security password", required: true
+					input "crmUsername", "string", title: "Hub Security username", required: true
+					input "crmPassword", "password", title: "Hub Security password", required: true
 				}
 				if (showInstall)
 					paragraph "Please click Done and restart the app to continue."
@@ -1012,9 +1012,9 @@ def prefPkgVerifyUpdates() {
 	def updatesToInstall = "<ul>"
 	
 	if (pkgsToUpdate.size() == packagesWithUpdates.size())
-		app.updateLabel("Hubitat Package Manager")
+		app.updateLabel("CRM")
 	else
-		app.updateLabel("Hubitat Package Manager <span style='color:green'>Updates Available</span>")
+		app.updateLabel("CRM <span style='color:green'>Updates Available</span>")
 	
 	
 	for (pkg in pkgsToUpdate) {
@@ -1423,7 +1423,7 @@ def prefPkgView() {
 
 	return dynamicPage(name: "prefPkgView", title: "View Apps and Drivers", install: true, uninstall: false) {
 		section {
-			paragraph "The apps and drivers listed below are managed by the Hubitat Package Manager."
+			paragraph "The apps and drivers listed below are managed by the CRM."
 			paragraph "<b>Managed Apps</b>"
 			paragraph appsStr
 			paragraph "<b>Managed Drivers</b>"
@@ -1484,9 +1484,9 @@ def checkForUpdates() {
 		}
 	}
 	if (!updates)
-		app.updateLabel("Hubitat Package Manager")
+		app.updateLabel("CRM")
 	else
-		app.updateLabel("Hubitat Package Manager <span style='color:green'>Updates Available</span>")
+		app.updateLabel("CRM <span style='color:green'>Updates Available</span>")
 
 }
 
@@ -1755,7 +1755,7 @@ def newVersionAvailable(versionStr, installedVersionStr) {
 }
 
 def login() {
-	if (hpmSecurity)
+	if (crmSecurity)
     {
 		def result = false
 		try
@@ -1770,8 +1770,8 @@ def login() {
 					],
 					body:
 					[
-						username: hpmUsername,
-						password: hpmPassword,
+						username: crmUsername,
+						password: crmPassword,
 						submit: "Login"
 					],
 					textParser: true
@@ -2195,23 +2195,23 @@ def rollback(error) {
 	return triggerError("Error Occurred During Installation", "An error occurred while installing the package: ${error}.")
 }
 
-def installHPMManifest()
+def installCRMManifest()
 {
-	if (state.manifests[listOfRepositories.hpm.location] == null) {
+	if (state.manifests[listOfRepositories.crm.location] == null) {
 		logDebug "Grabbing list of installed apps"
 		login()
 		def appsInstalled = getAppList()
 		
 		logDebug "Installing HPM Manifest"
-		def manifest = getJSONFile(listOfRepositories.hpm.location)
+		def manifest = getJSONFile(listOfRepositories.crm.location)
 		if (manifest == null) {
 			log.error "Error installing HPM manifest"
 			return false
 		}
-		def appId = appsInstalled.find { i -> i.title == "Hubitat Package Manager" && i.namespace == "dcm.hpm"}?.id
+		def appId = appsInstalled.find { i -> i.title == "CRM" && i.namespace == "crm"}?.id
 		if (appId != null) {
 			manifest.apps[0].heID = appId
-			state.manifests[listOfRepositories.hpm.location] = manifest
+			state.manifests[listOfRepositories.crm.location] = manifest
 			minimizeStoredManifests()
 		}
 		else

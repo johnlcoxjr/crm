@@ -3,6 +3,10 @@
 		{
 			"name": johnlcoxjr",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/repository.json"
+		},
+		{
+			"name": "BPTWorld",
+			"location": "https://raw.githubusercontent.com/bptworld/Hubitat/master/repositories.json"
 		}
 	],
 	"CRM": {

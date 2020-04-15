@@ -4,10 +4,10 @@
   "payPalUrl": "",
   "packages": [
     {
-      "name": "App Name",
-      "category": "Category",
-      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/packageManifest.json",
-      "description": "words"
+      "name": "Ambient Weather",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Ambient-Weather/packageManifest.json",
+      "description": "Ambient Weather"
     }
   ]
 }
