@@ -18,7 +18,7 @@
 			"id": "ab5a96e5-0b1d-4ebe-83e2-9ac631abf245",
 			"name": "Smart Alarm Control Alarm",
 			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control-Alarm/Smart-Alarm-Control-Alarm.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control/Smart-Alarm-Control-Alarm.groovy",
 			"required": true,
 			"oauth": false,
 			"version": "4.0.0"
@@ -27,7 +27,7 @@
 			"id": "9a348ae3-6732-4820-95ee-b30e07d3dcfd",
 			"name": "Smart Alarm Control Mode",
 			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control-Mode/Smart-Alarm-Control-Mode.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control/Smart-Alarm-Control-Mode.groovy",
 			"required": true,
 			"oauth": false,
 			"version": "4.0.0"
@@ -36,7 +36,7 @@
 			"id": "daf5af45-a2a0-45f8-9f99-a741289be433",
 			"name": "Smart Alarm Control People",
 			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control-People/Smart-Alarm-Control-People.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control/Smart-Alarm-Control-People.groovy",
 			"required": true,
 			"oauth": false,
 			"version": "3.0.1"
@@ -45,7 +45,7 @@
 			"id": "c57ddaf1-fd3b-4539-a326-a6b098128775",
 			"name": "Smart Alarm Control Presence",
 			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control-Presence/Smart-Alarm-Control-Presence.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control/Smart-Alarm-Control-Presence.groovy",
 			"required": true,
 			"oauth": false,
 			"version": "4.0.0"
