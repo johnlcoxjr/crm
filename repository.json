@@ -76,10 +76,10 @@
       "description": "Wattvision"
     },
     {
-      "name": "GE 12730 Fan Control",
+      "name": "GE 12730 Fan Controller",
       "category": "Driver",
-      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/GE-12730-Fan-Control/packageManifest.json",
-      "description": "GE 12730 Fan Control"
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/GE-12730-Fan-Controller/packageManifest.json",
+      "description": "GE 12730 Fan Controller"
     },
     {
       "name": "Z-Wave Outlet",
