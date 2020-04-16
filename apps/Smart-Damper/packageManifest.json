@@ -18,7 +18,7 @@
 	"drivers": [
 		{
 			"id": "d8d48b77-41b0-4d29-a692-55217149f8a9",
-			"name": "Bypas -Damper",
+			"name": "Bypass Damper",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Damper/Bypass-Damper.groovy",
 			"required": true,
