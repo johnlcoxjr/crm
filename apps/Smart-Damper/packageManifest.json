@@ -1,0 +1,29 @@
+{
+	"packageName": "Smart Damper",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "4.0.1",
+	"dateReleased": "2019-12-11",
+	"apps": [
+		{
+			"id": "324dc56b-bfc7-4b4f-acc2-e5e0f9d0afa1",
+			"name": "Smart-Damper",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Damper/Smart-Damper.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "4.0.1"
+		}
+	],
+	"drivers": [
+		{
+			"id": "d8d48b77-41b0-4d29-a692-55217149f8a9",
+			"name": "Bypass-Damper",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Bypass-Damper/Bypass-Damper.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "2.0.1"
+		}
+	]
+}

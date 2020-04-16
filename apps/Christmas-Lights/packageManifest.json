@@ -1,0 +1,20 @@
+{
+	"packageName": "Christmas Lights",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "1.0.0",
+	"dateReleased": "2019-12-30",
+	"apps": [
+		{
+			"id": "21977ac0-028c-478f-b49b-31c1c0c98b47",
+			"name": "Christmas-Lights",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Christmas-Lights/Christmas-Lights.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "1.0.0"
+		}
+	],
+	"drivers": [
+	]
+}

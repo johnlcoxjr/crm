@@ -1,0 +1,29 @@
+{
+	"packageName": "Wattvision",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "2.0.0",
+	"dateReleased": "2019-09-28",
+	"apps": [
+		{
+			"id": "d6c7155e-aadb-4083-b3ff-4d79178c45a8",
+			"name": "Wattvision-Manager",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Wattvision-Manager/Wattvision-Manager.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "2.0.0"
+		}
+	],
+	"drivers": [
+		{
+			"id": "54a75d1d-08d6-443d-994c-169429bc5104",
+			"name": "Wattvision",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Wattvision/Wattvision.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "2.0.0"
+		}
+	]
+}

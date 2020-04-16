@@ -1,0 +1,20 @@
+{
+	"packageName": "Switch LastActivity",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "1.0.1",
+	"dateReleased": "2019-12-30",
+	"apps": [
+		{
+			"id": "da68829b-bb9d-4f88-b1f0-de6e58c252b5",
+			"name": "Switch-LastActivity",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Switch-LastActivity/Switch-LastActivity.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "1.0.1"
+		}
+	],
+	"drivers": [
+	]
+}

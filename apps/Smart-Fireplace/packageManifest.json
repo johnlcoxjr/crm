@@ -1,0 +1,20 @@
+{
+	"packageName": "Smart Fireplacer",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "2.0.1",
+	"dateReleased": "2019-11-17",
+	"apps": [
+		{
+			"id": "5a78c22a-5f75-4a2f-ab77-267680d97013",
+			"name": "Smart-Fireplace",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fireplace/Smart-Fireplace.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "2.0.1"
+		}
+	],
+	"drivers": [
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"packageName": "ESP32-Sensor",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "2.0.1",
+	"dateReleased": "2019-11-10",
+	"apps": [
+	],
+	"drivers": [
+		{
+			"id": "5d85e4da-a352-488a-be55-a12477c26586",
+			"name": "ESP32-Sensor",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Sensor/ESP32-Sensor.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "2.0.1"
+		}
+	]
+}

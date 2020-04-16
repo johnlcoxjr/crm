@@ -1,0 +1,20 @@
+{
+	"packageName": "ESP32-Scheduler",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "2.0.2",
+	"dateReleased": "2019-11-10",
+	"apps": [
+	],
+	"drivers": [
+		{
+			"id": "561d07bf-0697-48ab-96ed-e38624fb2784",
+			"name": "ESP32-Scheduler",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Scheduler/ESP32-Scheduler.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "2.0.2"
+		}
+	]
+}

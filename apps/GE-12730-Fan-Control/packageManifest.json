@@ -1,0 +1,20 @@
+{
+	"packageName": "GE 12730 Fan Control",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "1.0.0",
+	"dateReleased": "2019-11-10",
+	"apps": [
+	],
+	"drivers": [
+		{
+			"id": "61a08051-1782-4cc2-93d3-128ad5eb9e1f",
+			"name": "GE-12730-Fan-Control",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/GE-12730-Fan-Control/GE-12730-Fan-Control.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "1.0.0"
+		}
+	]
+}

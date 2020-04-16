@@ -1,0 +1,20 @@
+{
+	"packageName": "Thermostat Mode Monitor",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "1.0.0",
+	"dateReleased": "2019-12-11",
+	"apps": [
+		{
+			"id": "d6ba13f5-4095-409b-a6f1-3ce3bea18995",
+			"name": "Thermostat-Mode-Monitor",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Thermostat-Mode-Monitor/Thermostat-Mode-Monitor.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "1.0.0"
+		}
+	],
+	"drivers": [
+	]
+}
