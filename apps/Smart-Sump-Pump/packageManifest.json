@@ -18,7 +18,7 @@
 			"id": "8673c7d0-bfa8-4d01-b778-341270cd0400",
 			"name": "Smart Sump Pump Child",
 			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump-Child/Smart-Sump-Pump-Child.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/Smart-Sump-Pump-Child.groovy",
 			"required": true,
 			"oauth": false,
 			"version": "3.0.0"
@@ -29,7 +29,7 @@
 			"id": "973855f8-8e7b-43e0-937f-4ca315d4a4aa",
 			"name": "Sump Sensor",
 			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Sump-Sensor/Sump-Sensor.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/Sump-Sensor.groovy",
 			"required": true,
 			"oauth": false,
 			"version": "3.0.1"
