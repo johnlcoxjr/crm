@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "971cdd78-7a0c-4650-9ff2-21600328ba75",
-			"name": "Presence-Monitor",
+			"name": "Presence Monitor",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Presence-Monitor/Presence-Monitor.groovy",
 			"required": true,

@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "e10fa978-6e2f-45a3-b5ae-9fd3aa1eded0",
-			"name": "Smart-Lighting-Director",
+			"name": "Smart Lighting Director",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Lighting-Director/Smart-Lighting-Director.groovy",
 			"required": true,

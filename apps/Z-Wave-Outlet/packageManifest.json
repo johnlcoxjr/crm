@@ -1,5 +1,5 @@
 {
-	"packageName": "Z-Wave-Outlet",
+	"packageName": "Z-Wave Outlet",
 	"minimumHEVersion": "2.1.9",
 	"author": "John Cox",
 	"version": "2.0.0",
@@ -9,7 +9,7 @@
 	"drivers": [
 		{
 			"id": "6d87909a-8333-4a18-8910-d0c55136631e",
-			"name": "Z-Wave-Outlet",
+			"name": "Z-Wave Outlet",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Z-Wave-Outlet/Z-Wave-Outlet.groovy",
 			"required": true,

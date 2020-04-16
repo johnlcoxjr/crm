@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "dbee27b4-ad6b-418d-a364-442209813157",
-			"name": "Smart-Fun",
+			"name": "Smart Fun",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fun/Smart-Fun.groovy",
 			"required": true,

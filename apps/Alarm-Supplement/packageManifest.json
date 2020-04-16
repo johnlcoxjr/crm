@@ -1,5 +1,5 @@
 {
-	"packageName": "Alarm-Supplement",
+	"packageName": "Alarm Supplement",
 	"minimumHEVersion": "2.1.9",
 	"author": "John Cox",
 	"version": "2.0.2",
@@ -9,7 +9,7 @@
 	"drivers": [
 		{
 			"id": "28ca5ac8-3941-4cde-8f58-e259e54cd520",
-			"name": "Alarm-Supplement",
+			"name": "Alarm Supplement",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Alarm-Supplement/Alarm-Supplement.groovy",
 			"required": true,

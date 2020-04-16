@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "21977ac0-028c-478f-b49b-31c1c0c98b47",
-			"name": "Christmas-Lights",
+			"name": "Christmas Lights",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Christmas-Lights/Christmas-Lights.groovy",
 			"required": true,

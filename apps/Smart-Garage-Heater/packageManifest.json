@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "5a78c22a-5f75-4a2f-ab77-267680d97013",
-			"name": "Smart-Garage-Heater",
+			"name": "Smart Garage Heater",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Garage-Heater/Smart-Garage-Heater.groovy",
 			"required": true,

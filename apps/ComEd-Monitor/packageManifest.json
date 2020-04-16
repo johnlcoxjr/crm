@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "9de6b575-0c76-44cc-9958-2b2a18c5b5de",
-			"name": "ComEd-Monitor",
+			"name": "ComEd Monitor",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ComEd-Monitor/ComEd-Monitor.groovy",
 			"required": true,

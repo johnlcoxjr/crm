@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "34b779ce-9914-41ad-a981-fe70e9cf8d7d",
-			"name": "Ambient-Weather-API",
+			"name": "Ambient Weather API",
 			"namespace": "CordMaster",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Ambient-Weather/Ambient-Weather-API.groovy",
 			"required": true,

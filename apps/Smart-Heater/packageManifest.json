@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "194e249f-0b27-4dfd-801c-cf3a6158886a",
-			"name": "Smart-Heater",
+			"name": "Smart Heater",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Heater/Smart-Heater.groovy",
 			"required": true,

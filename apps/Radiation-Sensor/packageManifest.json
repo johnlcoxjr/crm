@@ -1,20 +1,20 @@
 {
-	"packageName": "ESP32 Scheduler",
+	"packageName": "Radiation Sensor",
 	"minimumHEVersion": "2.1.9",
 	"author": "John Cox",
-	"version": "2.0.2",
+	"version": "3.0.1",
 	"dateReleased": "2019-11-10",
 	"apps": [
 	],
 	"drivers": [
 		{
 			"id": "561d07bf-0697-48ab-96ed-e38624fb2784",
-			"name": "ESP32-Scheduler",
+			"name": "Radiation Sensor",
 			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Scheduler/ESP32-Scheduler.groovy",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Radiation-Sensor/Radiation-Sensor.groovy",
 			"required": true,
 			"oauth": false,
-			"version": "2.0.2"
+			"version": "3.0.1"
 		}
 	]
 }

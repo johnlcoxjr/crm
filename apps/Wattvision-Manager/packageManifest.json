@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "d6c7155e-aadb-4083-b3ff-4d79178c45a8",
-			"name": "Wattvision-Manager",
+			"name": "Wattvision Manager",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Wattvision-Manager/Wattvision-Manager.groovy",
 			"required": true,

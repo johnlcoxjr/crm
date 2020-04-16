@@ -7,7 +7,7 @@
 	"apps": [
 		{
 			"id": "52e47b14-7c7d-4e9d-9c4c-a26fda84d275",
-			"name": "Smart-Sump-Pump",
+			"name": "Smart Sump Pump",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/Smart-Sump-Pump.groovy",
 			"required": true,
@@ -16,7 +16,7 @@
 		},
 		{
 			"id": "8673c7d0-bfa8-4d01-b778-341270cd0400",
-			"name": "Smart-Sump-Pump-Child",
+			"name": "Smart Sump Pump Child",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump-Child/Smart-Sump-Pump-Child.groovy",
 			"required": true,
@@ -27,7 +27,7 @@
 	"drivers": [
 		{
 			"id": "973855f8-8e7b-43e0-937f-4ca315d4a4aa",
-			"name": "Sump-Sensor",
+			"name": "Sump Sensor",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Sump-Sensor/Sump-Sensor.groovy",
 			"required": true,
