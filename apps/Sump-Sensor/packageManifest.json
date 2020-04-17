@@ -1,0 +1,20 @@
+{
+	"packageName": "Sump Sensor",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "3.0.1",
+	"dateReleased": "2019-09-28",
+	"apps": [
+	],
+	"drivers": [
+		{
+			"id": "973855f8-8e7b-43e0-937f-4ca315d4a4aa",
+			"name": "Sump Sensor",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/Sump-Sensor.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "3.0.1"
+		}
+	]
+}
