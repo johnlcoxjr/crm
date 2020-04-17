@@ -50,13 +50,6 @@
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Damper/packageManifest.json",
       "description": "Smart Damper"
-    },
-    {
-      "name": "Smart Sump Pump",
-      "category": "Monitor",
-      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/packageManifest.json",
-      "description": "Smart Sump Pump"
-    },
     {
       "name": "ComEd Monitor",
       "category": "Monitor",
@@ -133,7 +126,12 @@
       "name": "Thermostat Mode Monitor",
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Thermostat-Mode-Monitor/packageManifest.json",
-      "description": "Thermostat Mode Monitor"
+    },
+    {
+      "name": "Smart Sump Pump",
+      "category": "Monitor",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/packageManifest.json",
+      "description": "Smart Sump Pump"
     },
     {
       "name": "Sump Sensor",
