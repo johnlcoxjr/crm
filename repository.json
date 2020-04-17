@@ -134,6 +134,12 @@
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Thermostat-Mode-Monitor/packageManifest.json",
       "description": "Thermostat Mode Monitor"
+    },
+    {
+      "name": "Sump Sensor",
+      "category": "Driver",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Sump-Sensor/packageManifest.json",
+      "description": "Sump Sensor"
     }
   ]
 }
