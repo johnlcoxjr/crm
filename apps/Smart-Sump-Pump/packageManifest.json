@@ -24,17 +24,6 @@
 			"version": "3.0.0"
 		}		
 	],
-		"drivers": [
-		{
-			"id": "8bea2aeb-102f-4be2-9976-e7ab39b65f88",
-			"name": "Sump Sensor",
-			"namespace": "johnlcox",
-			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/Sump-Sensor.groovy",
-			"required": true,
-			"oauth": false,
-			"version": "3.0.1"
-		}
-	],
 	"drivers": [
 		{
 			"id": "8bea2aeb-102f-4be2-9976-e7ab39b65f88",
