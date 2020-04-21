@@ -126,6 +126,7 @@
       "name": "Thermostat Mode Monitor",
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Thermostat-Mode-Monitor/packageManifest.json",
+      "description": "Thermostat Mode Monitor"
     },
     {
       "name": "Smart Sump Pump",
