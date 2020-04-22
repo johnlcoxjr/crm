@@ -6,7 +6,7 @@
 	"dateReleased": "2019-09-28",
 	"apps": [
 		{
-			"id": "3ae0343c-d174-4032-b1e5-390d0cd66f0f",
+			"id": "43cbc1f2-501d-4576-a137-2c20aaad17a9",
 			"name": "Smart Sump Pump",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/Smart-Sump-Pump.groovy",
@@ -15,7 +15,7 @@
 			"version": "3.0.0"
 		},
 		{
-			"id": "ffd7622d-ff9b-4079-aee3-ca2fc4f52c70",
+			"id": "83cb6a6d-377b-40f4-bfdc-949377e2d1a2",
 			"name": "Smart Sump Pump Child",
 			"namespace": "johnlcox",
 			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/Smart-Sump-Pump-Child.groovy",
