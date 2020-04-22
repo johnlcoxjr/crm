@@ -4,6 +4,12 @@
   "payPalUrl": "",
   "packages": [
     {
+      "name": "Ambient Weather",
+      "category": "Integrations",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Ambient-Weather/packageManifest.json",
+      "description": "Ambient Weather"
+    },
+    {
       "name": "Smart Fireplace",
       "category": "Monitoring",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fireplace/packageManifest.json",
@@ -20,6 +26,12 @@
       "category": "Security",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Lighting-Director/packageManifest.json",
       "description": "Smart Lighting Director"
+    },
+    {
+      "name": "Smart Fun",
+      "category": "Entertainment",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fun/packageManifest.json",
+      "description": "Smart Fun"
     },
     {
       "name": "Smart Heater",
@@ -91,6 +103,12 @@
       "name": "ESP32 Sensor",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Sensor/packageManifest.json",
+      "description": "ESP32 Sensor"
+    },
+    {
+      "name": "SimpliSafe",
+      "category": "Driver",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/SimpliSafe/packageManifest.json",
       "description": "ESP32 Sensor"
     },
     {

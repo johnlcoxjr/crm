@@ -1,0 +1,20 @@
+{
+	"packageName": "Smart Fun",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "2.0.0",
+	"dateReleased": "2019-09-28",
+	"apps": [
+		{
+			"id": "dbee27b4-ad6b-418d-a364-442209813157",
+			"name": "Smart Fun",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fun/Smart-Fun.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "2.0.0"
+		}
+	],
+	"drivers": [
+	]
+}
