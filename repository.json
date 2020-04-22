@@ -40,6 +40,12 @@
       "description": "Smart Heater"
     },
     {
+      "name": "Smart Sump",
+      "category": "Monitor",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump/packageManifest.json",
+      "description": "Smart Sump"
+    },    
+    {
       "name": "Switch LastActivity",
       "category": "Utility",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Switch-LastActivity/packageManifest.json",
@@ -128,12 +134,6 @@
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Thermostat-Mode-Monitor/packageManifest.json",
       "description": "Thermostat Mode Monitor"
-    },
-    {
-      "name": "Smart Sump Pump",
-      "category": "Monitor",
-      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/packageManifest.json",
-      "description": "Smart Sump Pump"
     },
     {
       "name": "Sump Sensor",
