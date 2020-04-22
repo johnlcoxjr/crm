@@ -93,12 +93,6 @@
       "description": "ESP32 Sensor"
     },
     {
-      "name": "SimpliSafe",
-      "category": "Driver",
-      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/SimpliSafe/packageManifest.json",
-      "description": "ESP32 Sensor"
-    },
-    {
       "name": "Christmas Lights",
       "category": "Holiday",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Christmas-Lights/packageManifest.json",
