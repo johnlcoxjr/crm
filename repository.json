@@ -46,6 +46,12 @@
       "description": "Smart Sump"
     },    
     {
+      "name": "Smart Sump-Pump",
+      "category": "Monitor",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/packageManifest.json",
+      "description": "Smart Sump Pump"
+    },    
+    {
       "name": "Switch LastActivity",
       "category": "Utility",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Switch-LastActivity/packageManifest.json",
