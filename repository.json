@@ -38,6 +38,7 @@
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Damper/packageManifest.json",
       "description": "Smart Damper"
+    },
     {
       "name": "ComEd Monitor",
       "category": "Monitor",
