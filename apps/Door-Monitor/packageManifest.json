@@ -1,0 +1,20 @@
+{
+	"packageName": "Door-Monitor",
+	"minimumHEVersion": "2.1.9",
+	"author": "John Cox",
+	"version": "1.0.0",
+	"dateReleased": "2020-03-15",
+	"apps": [
+	],
+	"drivers": [
+		{
+			"id": "049a6d2e-6b62-4b5c-91c4-c6e4859e5efc",
+			"name": "Door-Monitor",
+			"namespace": "johnlcox",
+			"location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Door-Monitor/Door-Monitor.groovy",
+			"required": true,
+			"oauth": false,
+			"version": "1.0.0"
+		}
+	]
+}
