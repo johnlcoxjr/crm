@@ -22,6 +22,12 @@
       "description": "Smart Garage Heater"
     },
     {
+      "name": "Door Monitor",
+      "category": "Monitor",
+      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Door-Monitor/packageManifest.json",
+      "description": "Door Monitor"
+    },    
+    {
       "name": "Smart Lighting Director",
       "category": "Security",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Lighting-Director/packageManifest.json",
