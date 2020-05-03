@@ -5,8 +5,6 @@
 	"version": "1.0.0",
 	"dateReleased": "2020-03-15",
 	"apps": [
-	],
-	"drivers": [
 		{
 			"id": "049a6d2e-6b62-4b5c-91c4-c6e4859e5efc",
 			"name": "Door-Monitor",
@@ -16,5 +14,7 @@
 			"oauth": false,
 			"version": "1.0.0"
 		}
+	],
+	"drivers": [
 	]
 }
