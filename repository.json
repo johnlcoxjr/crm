@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "Ambient Weather",
-      "category": "Integrations",
+      "category": "Integration",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Ambient-Weather/packageManifest.json",
       "description": "Ambient Weather"
     },
@@ -53,13 +53,13 @@
     },    
     {
       "name": "Switch LastActivity",
-      "category": "Utility",
+      "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Switch-LastActivity/packageManifest.json",
       "description": "Switch LastActivity"
     },
     {
       "name": "Smart Damper",
-      "category": "Eco",
+      "category": "Integration",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Damper/packageManifest.json",
       "description": "Smart Damper"
     },
@@ -71,7 +71,7 @@
     },
     {
       "name": "Smart Alarm Control",
-      "category": "Monitor",
+      "category": "Security",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control/packageManifest.json",
       "description": "Smart Alarm Control"
     },
@@ -131,7 +131,7 @@
     },
     {
       "name": "Presence Monitor",
-      "category": "Utility",
+      "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Presence-Monitor/packageManifest.json",
       "description": "Presence Monitor"
     },
