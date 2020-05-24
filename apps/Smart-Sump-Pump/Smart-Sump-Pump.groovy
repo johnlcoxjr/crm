@@ -29,7 +29,7 @@ definition(
 	category: "Convenience",
 	iconUrl: "",
 	iconX2Url: ""
-	importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Smart-Sump-Pump
+	importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Smart-Sump-Pump"
 )
 
 preferences {
