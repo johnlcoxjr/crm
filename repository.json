@@ -46,12 +46,6 @@
       "description": "Smart Heater"
     },
     {
-      "name": "Smart Sump",
-      "category": "Monitor",
-      "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump/packageManifest.json",
-      "description": "Smart Sump"
-    },    
-    {
       "name": "Smart Sump Pump",
       "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/packageManifest.json",
