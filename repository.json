@@ -11,7 +11,7 @@
     },
     {
       "name": "Smart Fireplace",
-      "category": "Monitoring",
+      "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fireplace/packageManifest.json",
       "description": "Smart Fireplace"
     },
@@ -52,7 +52,7 @@
       "description": "Smart Sump"
     },    
     {
-      "name": "Smart Sump-Pump",
+      "name": "Smart Sump Pump",
       "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump-Pump/packageManifest.json",
       "description": "Smart Sump Pump"
