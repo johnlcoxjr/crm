@@ -1,12 +1,19 @@
 /*
 *   2.0.0   10/2/19     ported to Hubitat
 *	2.0.1	11/10/19	added debug
+*   3.0.0   7/8/20      upgraded to common framework
 */
 
 import hubitat.helper.InterfaceUtils
 
 metadata {
-	definition (name: "ESP32 Sensor", version: "2.0.1", namespace: "johnlcox", author: "john.l.cox@live.com",importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Drivers/ESP32-Sensor.groovy") {
+	definition (
+    name: "ESP32 Sensor",
+    version: "3.0.0",
+    namespace: "johnlcox", 
+    author: "john.l.cox@live.com",
+    importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Drivers/ESP32-Sensor.groovy")
+    {
 		capability "Sensor"
         capability "Temperature Measurement"
         capability "Relative Humidity Measurement"
@@ -25,33 +32,51 @@ metadata {
         attribute "rssi","string"
         attribute "voltage","string"
 
-        command "version"
+        command "getVersion"
         command "data"
+        command "reboot"
+        command "initialize"
+
 	}
     
 	preferences {
-		section("Arduino") {
-			input "ip", "text", title: "Arduino IP Address", description: "ip", required: true, displayDuringSetup: true
-			input "port", "text", title: "Arduino Port", description: "port", required: true, displayDuringSetup: true
-			input "mac", "text", title: "Arduino MAC Addr", description: "mac", required: true, displayDuringSetup: true
-		}
-		section("Preferences") {
-	        input name: "schedulerFreq", type: "enum", title: "Run Refresh Every (mins)?", options: ['Off','1','2','3','4','5','10','15','30','60','180'], required: true, defaultValue: '5'
-        	input "showLogs", "bool", required: false, title: "Show Debug Logs?", defaultValue: false
-    	}  
+	    section("Arduino") {
+    	    input "ip", "text", title: "Arduino IP Address", description: "ip", required: true, displayDuringSetup: true
+	        input "port", "text", title: "Arduino Port", description: "port", required: true, displayDuringSetup: true
+            input "mac", "text", title: "Arduino MAC Addr", description: "mac", required: true, displayDuringSetup: true
+            input "freq", "text", title: "Ping Frequency", description: "freq", required: true, displayDuringSetup: true, defaultValue: "15"
+	    }
+	    section("Preferences") {
+            input "showLogs", "bool", required: false, title: "Show Debug Logs?", defaultValue: false
+    	}
 	}  
  
 	main (["temperature"])
 		details (["temperature","humidity","pressure","mfd","altitude","lux","colorTemp","color","msg","version"])
 }
 
+def ping() {
+    if (showLogs) log.info("ping")
+    
+    sendEthernet("ping")
+}
+
+def initialize() {
+    state.clear()
+    
+    schedule("0/${settings.freq} * * * * ? *", ping)
+}
+
 // parse events into attributes
 def parse(String description) {
-	def message = parseLanMessage(description)
-	def headerString = message.header
-	def mac = message.mac
-
-	def msg = message.body
+   def msg = parseLanMessage(description).payload
+          
+    if (showLogs) log.info("description = ${description}")
+    
+    if (showLogs) log.info("payload = ${msg}")
+	    
+    msg = hexToASCII(msg);
+    if (showLogs) log.info("message = ${msg}") 
    
     if (msg != null) {
         if (msg.contains("ping") || msg.equals("")) {
@@ -146,12 +171,13 @@ def parse(String description) {
 	}
 }
 
-
-def sendData(message) {
-	new hubitat.device.HubAction(
-		method: "POST",
-		path: "/${message}?",
-		headers: [ HOST: "${getHostAddress()}" ])
+private static String hexToASCII(String hexValue) {
+    StringBuilder output = new StringBuilder("");
+    for (int i = 0; i < hexValue.length(); i += 2) {
+        String str = hexValue.substring(i, i + 2);
+        output.append((char) Integer.parseInt(str, 16));
+    }
+    return output.toString();
 }
 
 private getHostAddress() {
@@ -164,19 +190,30 @@ private getHostAddress() {
 
 def sendEthernet(message) {
 	if (showLogs) log.info("Executing 'sendEthernet' ${message}")
-	new hubitat.device.HubAction(
-    	method: "POST",
-    	path: "/${message}?",
-    	headers: [ HOST: "${getHostAddress()}" ]
-	)
+     
+    def myHubAction = new hubitat.device.HubAction(message, 
+								hubitat.device.Protocol.LAN, 
+                                settings.mac,
+								[type: hubitat.device.HubAction.Type.LAN_TYPE_UDPCLIENT, 
+		                        destinationAddress: getHostAddress(),
+                                callback: parse])
+    sendHubCommand(myHubAction)
 }
 
 def data() {
-	if (showLogs) log.info("Sending 'data'")
-	sendEthernet("data")
+	if (showLogs) log.info("Sent to device:  data")
+    
+    sendEthernet("data")
 }
 
-def version() {
-	if (showLogs) log.info("Sending 'version'")
-	sendEthernet("version")
+def getVersion() {
+	if (showLogs) log.info("Sent to device:  version")
+    
+    sendEthernet("version")
+}
+
+def reboot() {
+	if (showLogs) log.info("Sent to device:  reboot")
+    
+    sendEthernet("reboot")
 }
