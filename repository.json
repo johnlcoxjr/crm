@@ -7,151 +7,243 @@
       "name": "Ambient Weather",
       "category": "Integrations",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Ambient-Weather/packageManifest.json",
-      "description": "Ambient Weather"
+      "description": "Ambient Weather",
+      "tags": [
+        "Weather"
+      ]
     },
     {
       "name": "Smart Fireplace",
       "category": "Monitoring",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fireplace/packageManifest.json",
-      "description": "Smart Fireplace"
+      "description": "Smart Fireplace",
+      "tags": [
+        "Safety & Security",
+	"Monitoring"
+      ]
     },
     {
       "name": "Smart Garage Heater",
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Garage-Heater/packageManifest.json",
-      "description": "Smart Garage Heater"
+      "description": "Smart Garage Heater",
+      "tags": [
+        "Climate Control"
+      ]
     },
     {
       "name": "Smart Lighting Director",
       "category": "Security",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Lighting-Director/packageManifest.json",
-      "description": "Smart Lighting Director"
+      "description": "Smart Lighting Director",
+      "tags": [
+        "Safety & Security"
+      ]
     },
     {
       "name": "Smart Fun",
       "category": "Entertainment",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Fun/packageManifest.json",
-      "description": "Smart Fun"
+      "description": "Smart Fun",
+      "tags": [
+        "Automations & Groups"
+      ]
     },
     {
       "name": "Smart Heater",
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Heater/packageManifest.json",
-      "description": "Smart Heater"
+      "description": "Smart Heater",
+      "tags": [
+        "Climate Control"
+      ]
     },
     {
       "name": "Smart Sump",
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Sump/packageManifest.json",
-      "description": "Smart Heater"
+      "description": "Smart Sump",
+      "tags": [
+        "Water",
+	"Monitoring",
+	"Weather"
+      ]
     },
     {
       "name": "Switch LastActivity",
       "category": "Utility",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Switch-LastActivity/packageManifest.json",
-      "description": "Switch LastActivity"
+      "description": "Switch LastActivity",
+      "tags": [
+        "Safety & Security",
+	"Tools & Utilities",
+	"Lights & Switches"
+      ]
     },
     {
       "name": "Smart Damper",
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Damper/packageManifest.json",
-      "description": "Smart Damper"
+      "description": "Smart Damper",
+      "tags": [
+        "Climate Control"
+      ]
     },
     {
       "name": "ComEd Monitor",
       "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ComEd-Monitor/packageManifest.json",
-      "description": "ComEd Monitor"
+      "description": "ComEd Monitor",
+      "tags": [
+        "Energy Monitoring"
+      ]
     },
     {
       "name": "Smart Alarm Control",
       "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Smart-Alarm-Control/packageManifest.json",
-      "description": "Smart Alarm Control"
+      "description": "Smart Alarm Control",
+      "tags": [
+        "Safety & Security",
+	"Alarm Systems"
+      ]
     },
     {
       "name": "Wattvision",
       "category": "Monitor",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Wattvision/packageManifest.json",
-      "description": "Wattvision"
+      "description": "Wattvision",
+      "tags": [
+	"Energy Monitoring"
+      ]
     },
     {
       "name": "GE 12730 Fan Controller",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/GE-12730-Fan-Controller/packageManifest.json",
-      "description": "GE 12730 Fan Controller"
+      "description": "GE 12730 Fan Controller",
+      "tags": [
+	"Climate Control",
+	"Lights & Switches"
+      ]
     },
     {
       "name": "Z-Wave Outlet",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Z-Wave-Outlet/packageManifest.json",
-      "description": "Z-Wave Outlet"
+      "description": "Z-Wave Outlet",
+      "tags": [
+	"Tools & Utilities",
+	"Lights & Switches"
+      ]
     },
     {
       "name": "Alarm Supplement",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Alarm-Supplement/packageManifest.json",
-      "description": "Alarm Supplement"
+      "description": "Alarm Supplement",
+      "tags": [
+	"Safety & Security",
+	"Alarm Systems"
+      ]
     },
     {
       "name": "Radiation Sensor",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Radiation-Sensor/packageManifest.json",
-      "description": "Radiation Sensor"
+      "description": "Radiation Sensor",
+      "tags": [
+	"Safety & Security",
+	"Monitoring"
+      ]
     },
     {
       "name": "ESP32 Scheduler",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Scheduler/packageManifest.json",
-      "description": "ESP32 Scheduler"
+      "description": "ESP32 Scheduler",
+      "tags": [
+	"Tools & Utilities",
+	"Timers"
+      ]
     },
     {
       "name": "ESP32 Sensor",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Sensor/packageManifest.json",
-      "description": "ESP32 Sensor"
+      "description": "ESP32 Sensor",
+      "tags": [
+	"Monitoring"
+      ]
     },
     {
       "name": "SimpliSafe",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/SimpliSafe/packageManifest.json",
-      "description": "ESP32 Sensor"
+      "description": "SimpliSafe",
+      "tags": [
+	"Alarm Systems",
+	"Safety & Security",
+	"Monitoring"
+      ]
     },
     {
       "name": "Christmas Lights",
       "category": "Holiday",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Christmas-Lights/packageManifest.json",
-      "description": "Christmas Lights"
+      "description": "Christmas Lights",
+      "tags": [
+	"Lights & Switches",
+	"Automations & Groups"
+      ]
     },
     {
       "name": "Presence Monitor",
       "category": "Utility",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Presence-Monitor/packageManifest.json",
-      "description": "Presence Monitor"
+      "description": "Presence Monitor",
+      "tags": [
+	"Presence & Location"
+      ]
     },
     {
       "name": "Thermostat Mode Monitor",
       "category": "Eco",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Thermostat-Mode-Monitor/packageManifest.json",
-      "description": "Thermostat Mode Monitor"
+      "description": "Thermostat Mode Monitor",
+      "tags": [
+	"Climate Control",
+	"Monitoring"
+      ]
     },
     {
       "name": "Sump Sensor",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/Sump-Sensor/packageManifest.json",
-      "description": "Sump Sensor"
+      "description": "Sump Sensor",
+      "tags": [
+	"Water",
+	"Monitoring",
+	"Weather"
+      ]
     },
     {
       "name": "ESP32 Pinger",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Pinger/packageManifest.json",
-      "description": "ESP32 Pinger"
+      "description": "ESP32 Pinger",
+      "tags": [
+	"Tools & Utilities"
+      ]
     }
     {
       "name": "ESP32 Weather",
       "category": "Driver",
       "location": "https://raw.githubusercontent.com/johnlcoxjr/crm/master/apps/ESP32-Weather/packageManifest.json",
-      "description": "ESP32 Pinger"
+      "description": "ESP32 Pinger",
+      "tags": [
+	"Weather"
+      ]
     }
   ]
 }
