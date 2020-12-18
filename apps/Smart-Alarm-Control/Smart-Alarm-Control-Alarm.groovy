@@ -1,25 +1,27 @@
-/*  Smart Alarm Control - Alarm
-*
-* 4.0.0		10/5/19		updated to Hubitat  
-*
-* Copyright 2017-20 John Cox
-*
-* Developer retains all right, title, copyright, and interest, including all copyright, patent rights, trade secret in the Background technology.
-* May be subject to consulting fees under the Agreement between the Developer and the Customer. Developer grants a non-exclusive perpetual license
-* to use the Background technology in the Software developed for and delivered to Customer under this Agreement. However, the Customer shall make
-* no commercial use of the Background technology without Developer's written consent.
-* 
-* Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT 
-* WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied. 
-*
-* Software Distribution is restricted and shall be done only with Developer's written approval.
-*/
-
+/*  Smart Alarm Control - ADT/SimpliSafe (Child)
+ *
+ *  Version 
+ *	2.0.0 	1/1/2016
+ *	2.0.1	2/26/2017	removed unnecessary code
+ *	3.0.0	12/2/2018	adapted for SimpliSafe
+ *	4.0.0	10/5/2019	ported to Hubitat  
+ *
+ *  Copyright 2017 John Cox
+ *
+ *  Developer retains all right, title, copyright, and interest, including all copyright, patent rights, trade secret in the Background technology.
+ *  May be subject to consulting fees under the Agreement between the Developer and the Customer. Developer grants a non-exclusive perpetual license
+ *  to use the Background technology in the Software developed for and delivered to Customer under this Agreement. However, the Customer shall make
+ *  no commercial use of the Background technology without Developer's written consent.
+ *  
+ *  Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT 
+ *  WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied. 
+ *
+ *  Software Distribution is restricted and shall be done only with Developer's written approval.
+ */
 import hubitat.helper.InterfaceUtils
 
 definition(
     name: "Smart Alarm Control (Alarm)",
-    version: "4.0.0",
     namespace: "johnlcox",
     author: "john.l.cox@live.com",
     parent: "johnlcox:Smart Alarm Control",
@@ -27,7 +29,7 @@ definition(
     category: "Safety & Security",
     iconUrl: "",
     iconX2Url: "",
-    importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Smart-Alarm-Control-Alarm.groovy"
+importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Smart-Alarm-Control-Alarm.groovy"
 )
 
 
@@ -101,25 +103,27 @@ def alarmSystem(evt) {
 	def status = evt.value
 	def alarmState = parent.alarm.currentValue("alarm")    
     
-	sendEvent(name:"Alarm", value: "${status}", descriptionText:"Status")
+    if (status != "error") { //added if to avoid sending false statuses when error is cleared
+        sendEvent(name:"Alarm", value: "${status}", descriptionText:"Status")
+    }
 	
     if (enableDebug) log.info("status = ${status}")
     
-	if (status.contains("OFF")) {
+	if (status.contains("off")) {
 		parent.aggregateMsg("Alarm is off.")
 
 		parent.activationLight("disarm")     
 
 		app.updateLabel("Alarm <span style=\"color:green\"> Off</span>")
 	} 
-	else if (status.contains("HOME")) {
+	else if (status.contains("home")) {
 		parent.aggregateMsg("Alarm is on.")
 
 		parent.activationLight("arm")            
 
 		app.updateLabel("Alarm <span style=\"color:red\"> Home (Stay)</span>")
 	} 
-	else if (status.contains("AWAY")) {
+	else if (status.contains("away")) {
 		parent.aggregateMsg("Alarm is on (away).")
 
 		parent.activationLight("arm")

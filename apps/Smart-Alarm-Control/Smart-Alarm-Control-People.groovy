@@ -72,7 +72,7 @@ preferences {
 	}   
 
 	section("-= <b>Debug Menu</b> =-") {
-		input "enableDebug", "bool", title: "Enable debug output?", required: false, defaultValue: false
+		input "enableDebug", "bool", title: "Enable debug logging?", required: false, defaultValue: false
 	}
 	
 	section("Status lights...") {

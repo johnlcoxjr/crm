@@ -25,8 +25,8 @@ definition(
     author: "john.l.cox@live.com",
     description: "Provides your ADT system with the ability to turn itself off when someone arrives and then re-arm.",
     category: "Safety & Security",
-    iconUrl: "https://maxcdn.icons8.com/Color/PNG/96/Security/secured_by_alarm_system-96.png",
-    iconX2Url: "https://maxcdn.icons8.com/Color/PNG/96/Security/secured_by_alarm_system-96.png",
+    iconUrl: "",
+    iconX2Url: "",
     importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Smart-Alarm-Control-Presence.groovy"
 )
 
@@ -72,7 +72,7 @@ preferences {
 	}       
 
 	section("-= <b>Debug Menu</b> =-") {
-		input "enableDebug", "bool", title: "Enable debug output?", required: false, defaultValue: false
+		input "enableDebug", "bool", title: "Enable debug logging?", required: false, defaultValue: false
 	}
 	
 	section() {
