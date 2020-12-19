@@ -28,15 +28,13 @@ metadata {
 	importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Drivers/ESP32-Scheduler.groovy"
     ) {
         capability "Sensor"
-		capability "Momentary"
-		capability "Switch"
+		//capability "Momentary"
+		//capability "Switch"
 
         command "getVersion"
-        command "setScreen"
         command "getTime"
-        command "version"
 		command "reboot"
-		command "pushed"
+        command "initialize"
 
         attribute "schedule1","string"
         attribute "schedule2","string"
@@ -60,7 +58,8 @@ metadata {
 	section("Arduino") {
 	    input "ip", "text", title: "Arduino IP Address", description: "ip", required: true, displayDuringSetup: true
 	    input "port", "text", title: "Arduino Port", description: "port", required: true, displayDuringSetup: true
-            input "mac", "text", title: "Arduino MAC Addr", description: "mac", required: true, displayDuringSetup: true
+        input "mac", "text", title: "Arduino MAC Addr", description: "mac", required: true, displayDuringSetup: true
+        input "freq", "text", title: "Ping Frequency", description: "freq", required: true, displayDuringSetup: true, defaultValue: "15"
 	}
 	section("Preferences") {
             input "showLogs", "bool", required: false, title: "Show Debug Logs?", defaultValue: false
@@ -71,13 +70,27 @@ metadata {
     details(["scheduler", "msg", "version","screen"])
 }
 
-def parse(String description) {
-	def message = parseLanMessage(description)
-	def headerString = message.header
-	def mac = message.mac
-
-	def msg = message.body
+def ping() {
+    if (showLogs) log.info("ping")
     
+    sendEthernet("ping")
+}
+
+def initialize() {
+    schedule("0/${settings.freq} * * * * ? *", ping)
+}
+
+def parse(String description) {          
+    def msg = parseLanMessage(description).payload
+       
+    if (showLogs) log.info("description = ${description}")
+    
+    if (showLogs) log.info("payload = ${msg}")
+	    
+    msg = hexToASCII(msg);
+       
+    if (showLogs) log.info("message = ${msg}")
+	
     if (msg != null) {
         if (msg.contains("ping") || msg.equals("")) {
             sendEvent(name: "msg", value: "Ready")
@@ -163,16 +176,19 @@ def parse(String description) {
 			}        
         }
         
-        else if (msg.contains("SON")) {
-            sendEvent(name: "screen", value: "on", displayed: true, isStateChange: true, isPhysical: true)   
-        }
-        else if (msg.contains("SOF")) {
-            sendEvent(name: "screen", value: "off", displayed: true, isStateChange: true, isPhysical: true)   
-        }    
 		else {
 			sendEvent(name: "msg", value: "${msg}", displayed: true, isStateChange: true, isPhysical: true)   
 		} 
  	}
+}
+
+private static String hexToASCII(String hexValue) {
+    StringBuilder output = new StringBuilder("");
+    for (int i = 0; i < hexValue.length(); i += 2) {
+        String str = hexValue.substring(i, i + 2);
+        output.append((char) Integer.parseInt(str, 16));
+    }
+    return output.toString();
 }
 
 def getTime() {
@@ -191,11 +207,14 @@ private getHostAddress() {
 
 def sendEthernet(message) {
 	if (showLogs) log.info("Executing 'sendEthernet' ${message}")
-	new hubitat.device.HubAction(
-    	method: "POST",
-    	path: "/${message}?",
-    	headers: [ HOST: "${getHostAddress()}" ]
-	)
+     
+    def myHubAction = new hubitat.device.HubAction(message, 
+								hubitat.device.Protocol.LAN, 
+                                settings.mac,
+								[type: hubitat.device.HubAction.Type.LAN_TYPE_UDPCLIENT, 
+		                        destinationAddress: getHostAddress(),
+                                callback: parse])
+    sendHubCommand(myHubAction)
 }
 
 def getVersion() {
@@ -208,34 +227,4 @@ def reboot() {
 	if (showLogs) log.info("Sent to device:  reboot")
     
     sendEthernet("reboot")
-}
-
-def version() {
-	getVersion()
-}
-
-def setScreen() {
-	if (showLogs) log.info("Sent to device:  screen")
-    
-    sendEthernet("screen")
-}
-
-def push() {
-    //toggle the switch to generate events for anything that is subscribed
-    sendEvent(name: "switch", value: "on", isStateChange: true)
-    runIn(1, toggleOff)
-    //sendEvent(name: "switch", value: "off", isStateChange: true)
-    reboot()
-}
-
-def toggleOff() {
-    sendEvent(name: "switch", value: "off", isStateChange: true)
-}
-
-def on() {
-	push()
-}
-
-def off() {
-	push()
 }
