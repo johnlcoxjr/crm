@@ -5,6 +5,7 @@
  *  2.0.0   10/2/19    ported to Hubitat
  *  2.0.1   11/10/19	added debug
  *  2.0.2	12/22/19	fixed backlight bug
+ *  3.0.0   9/2/20    removed relays and garage doors - new doors do not support the functionality
  *
  *  Copyright 2016 John Cox
  *
@@ -32,35 +33,23 @@ metadata {
 	definition (name: "Alarm Supplement", version: "2.0.2", namespace: "johnlcox", author: "john.l.cox@live.com",importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Drivers/Alarm-Supplement.groovy") {
 		//capability "Alarm"
         capability "Sensor"
-        capability "Actuator"
         capability "Contact Sensor"
         capability "Water Sensor"
-        capability "Switch"
           
         attribute "water", "string"
         attribute "contact", "string"
         attribute "version", "string"
         attribute "msg", "string"
-        attribute "relay1", "string"
-        attribute "relay2", "string"
-        attribute "door1", "string"
-        attribute "door2", "string"
         attribute "window1", "string"
         attribute "window2", "string"
         attribute "refresh", "string"
         
         command "version"
-        command "pushRelay1"
-        command "pushRelay2"
-        command "setBacklight"
-        command "setReset"
-        command "setRefresh"
-		command "off"
-        command "on"
+        command "Backlight"
+        command "Reset"
+        command "Refresh"
+
 	}
-	   
-	main(["water"])
-	details(["water", "version", "window1", "window2", "reset", "relay1", "relay2", "backlight", "door1", "door2", "msg"])
 }
 
 def parse(String description) {
@@ -105,35 +94,7 @@ def parse(String description) {
         	sendEvent(name: "contact", value: "closed", displayed: true, isStateChange: true, isPhysical: true)      
 	        sendEvent(name: "msg", value: "South window is closed")    
     	}
-     
-	    //door1 sensor
-		if (msg.contains("D1O")) {
-	        sendEvent(name: "door1", value: "open", displayed: true, isStateChange: true, isPhysical: true)  
-	        sendEvent(name: "msg", value: "East overhead door is open")             	
-	    }
-	    if (msg.contains("D1C")) {
-	        sendEvent(name: "door1", value: "closed", displayed: true, isStateChange: true, isPhysical: true)      
-	        sendEvent(name: "msg", value: "East overhead door is closed")             	
-	    }
-
-	    //door2 sensor
-		if (msg.contains("D2O")) {
-	        sendEvent(name: "door2", value: "open", displayed: true, isStateChange: true, isPhysical: true)  
-	        sendEvent(name: "msg", value: "West overhead door is open")             	
-	    }
-		if (msg.contains("D2C")) {
-	        sendEvent(name: "door2", value: "closed", displayed: true, isStateChange: true, isPhysical: true)      
-    	    sendEvent(name: "msg", value: "West overhead door is closed")             	
-	     }
-
-    	//relays/actuators
-	    if (msg.contains("Relay East")) {        
-    		sendEvent(name: "msg", value: "East opener activated") 
-		}
-	    if (msg.contains("Relay West")) {
-    	    sendEvent(name: "msg", value: "West opener activated")     
-		}
-    
+       
     	//backlight
     	if (msg.contains("BON")) {
         	sendEvent(name: "backlight", value: "on", displayed: true, isStateChange: true, isPhysical: true)   
@@ -162,42 +123,22 @@ def parse(String description) {
 	}
 }
 
-def pushRelay1() {   
-    if (showLogs) log.info("Sent to device:  relayEast ")
-    
-    sendThingShield("[RELAY-EAST]")
-}
-
-def pushRelay2() {
-    if (showLogs) log.info("Sent to device:  relayWest")
-
-    sendThingShield("[RELAY-WEST]") 
-}
-
 def version() {
 	if (showLogs) log.info("Sent to device:  version")
     
-    sendThingShield("[VERSION]")
+    sendThingShield("version")
 }
 
-def setBacklight() {
+def Backlight() {
 	if (showLogs) log.info("Sent to device:  backlight")
     
     sendThingShield("[BACKLIGHT]")
 }
 
-def setReset() {
+def Reset() {
 	if (showLogs) log.info("Sent to device:  reset")
     
     sendThingShield("[RESET]")
-}
-
-def on() {
-    pushRelay1()
-}
-
-def off() {
-    pushRelay1()
 }
 
 def sendThingShield(String message) {
