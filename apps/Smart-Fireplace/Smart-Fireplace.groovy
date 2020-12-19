@@ -118,13 +118,13 @@ def initialize() {
 
 def triggerTemp(evt) {
     def displayName = evt.displayName
-    def temperature
+    int temperature
     
     if (displayName.contains("Light")) {
-         temperature = evt.doubleValue.toInteger()
+        temperature = temp1.currentValue("temperature").toInteger()
     }
     else {
-  	    temperature = temp1.currentValue("temperature").toInteger()
+  	    temperature = evt.doubleValue.toInteger()
     }
     
     process(temperature)
