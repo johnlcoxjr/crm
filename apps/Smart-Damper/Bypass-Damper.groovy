@@ -28,16 +28,6 @@ metadata {
         command "debug"
         command "version"
         command "set0"
-        command "set10"
-        command "set20"
-        command "set30"
-        command "set40"
-        command "set50"
-        command "set60"
-        command "set70"
-        command "set80"
-        command "set90"
-        command "set100"
         command "set1"
         command "set2"
         command "set3"
@@ -47,23 +37,18 @@ metadata {
         command "set7"
         command "set8"
         command "set9"
-        command "set10a"
+        command "set10"
         command "setBacklight"
-
         
         attribute "setpoint", "string"
         attribute "system", "string"
         attribute "msg", "string"
     }
-    
-    main(["setpoint"])
-    details(["setpoint", "damperOpen", 
-             "sync", "release", "engage", "debug", "version", "set0", "set10", "set20", "set30", "set40", "set50", "set60", "set70", "set80", "set90", "set100", "set1", "set2", "set3", "set4", "set5", "set6", "set7", "set8", "set9", "set10a", "backlight","msg"])
 }
 
 def parse(String description) {  
-	def msg = zigbee.parse(description)?.text
-    
+	def msg = zigbee.parse(description)?.text    
+
     if (msg != null) { 
         if (msg.contains("ping") || msg.equals("")) {
             sendEvent(name: "msg", value: "Ready")
@@ -74,23 +59,12 @@ def parse(String description) {
         else if (msg.contains("Calibrate")) {
             sendEvent(name: "msg", value: "${msg}")
         }
-
-        else if (msg.contains("set") || msg.contains("set0") || msg.contains("set10") || msg.contains("set20") || msg.contains("set30") || msg.contains("set40") || msg.contains("set50") || msg.contains("set60") || msg.contains("set70") || msg.contains("set80") || msg.contains("set90") || msg.contains("set100")) {
-            sendEvent(name: "msg", value: "Processed ${msg}")
-        }
-        else if (msg.contains("00")) {
-            def position = msg.toInteger()
+        else if (msg.contains("0") || msg.contains("1") || msg.contains("2") || msg.contains("3") || msg.contains("4") || msg.contains("5") || msg.contains("6") || msg.contains("7") || msg.contains("8") || msg.contains("9")) {  
+            def position = msg.substring(3).toInteger()
 
             sendEvent(name: "setpoint", value: "${position}")
 
-            sendEvent(name: "msg", value: "Sync processed ${msg}")
-        } 
-        else if (msg.contains("0") || msg.contains("1") || msg.contains("2") || msg.contains("3") || msg.contains("4") || msg.contains("5") || msg.contains("6") || msg.contains("7") || msg.contains("8") || msg.contains("9") || msg.contains("10")) {  
-            def position = msg.toInteger()
-
-            sendEvent(name: "setpoint", value: "${position}")
-
-            sendEvent(name: "msg", value: "Damper open ${msg}/10")
+            sendEvent(name: "msg", value: "Damper open ${position}/10")
         }
         else if (msg.contains("BON")) {
             sendEvent(name: "backlight", value: "on", displayed: true, isStateChange: true, isPhysical: true)   
@@ -112,34 +86,34 @@ def damperOpen(int damperValue) {
     	set0()
     }
     else if (damperValue == 1) {
-    	set10()
+    	set1()
     }
     else if (damperValue == 2) {
-    	set20()
+    	set2()
     }
     else if (damperValue == 3) {
-    	set30()
+    	set3()
     }
     else if (damperValue == 4) {
-    	set40()
+    	set4()
     }    
     else if (damperValue == 5) {
-    	set50()
+    	set5()
     }
     else if (damperValue == 6) {
-    	set60()
+    	set6()
     }    
     else if (damperValue == 7) {
-    	set70()
+    	set7()
     }
     else if (damperValue == 8) {
-    	set80()
+    	set8()
     }    
     else if (damperValue == 9) {
-    	set90()
+    	set9()
     }    
     else {
-    	set100()
+    	set10()
     }
 }
 
@@ -165,104 +139,64 @@ def set0() {
     sendThingShield("set0") 
 }
 
-def set10() {
-    if (showLogs) log.info("Sent to device: set10")
-    
-    sendThingShield("set10") 
-}
-
-def set20() {
-    if (showLogs) log.info("Sent to device: set20")
-    
-    sendThingShield("set20") 
-}
-
-def set30() {
-    if (showLogs) log.info("Sent to device: set30")
-    
-    sendThingShield("set30")
-}
-
-def set40() {
-    if (showLogs) log.info("Sent to device: set40")
-    
-    sendThingShield("set40") 
-}
-
-def set50() {
-    if (showLogs) log.info("Sent to device: set50")
-    
-    sendThingShield("set50") 
-}
-
-def set60() {
-    if (showLogs) log.info("Sent to device: set60")
-    
-    sendThingShield("set60") 
-}
-
-def set70() {
-    if (showLogs) log.info("Sent to device: set70")
-    
-    sendThingShield("set70") 
-}
-
-def set80() {
-    if (showLogs) log.info("Sent to device: set80")
-    
-    sendThingShield("set80") 
-}
-
-def set90() {
-    if (showLogs) log.info("Sent to device: set90")
-    
-    sendThingShield("set90") 
-}
-
-def set100() {
-    if (showLogs) log.info("Sent to device: set100")
-    
-    sendThingShield("set100")
-}
-
 def set1() {
-    set10()
+    if (showLogs) log.info("Sent to device: set1")
+    
+    sendThingShield("set1") 
 }
 
 def set2() {
-    set20()
+    if (showLogs) log.info("Sent to device: set2")
+    
+    sendThingShield("set2") 
 }
 
 def set3() {
-    set30()
+    if (showLogs) log.info("Sent to device: set3")
+    
+    sendThingShield("set3")
 }
 
 def set4() {
-    set40()
+    if (showLogs) log.info("Sent to device: set4")
+    
+    sendThingShield("set4") 
 }
 
 def set5() {
-    set50()
+    if (showLogs) log.info("Sent to device: set5")
+    
+    sendThingShield("set5") 
 }
 
 def set6() {
-    set60()
+    if (showLogs) log.info("Sent to device: set6")
+    
+    sendThingShield("set6") 
 }
 
 def set7() {
-    set70()
+    if (showLogs) log.info("Sent to device: set7")
+    
+    sendThingShield("set7") 
 }
 
 def set8() {
-    set80()
+    if (showLogs) log.info("Sent to device: set8")
+    
+    sendThingShield("set8") 
 }
 
 def set9() {
-    set90()
+    if (showLogs) log.info("Sent to device: set9")
+    
+    sendThingShield("set9") 
 }
 
-def set10a() {
-    set100()
+def set10() {
+    if (showLogs) log.info("Sent to device: set10")
+    
+    sendThingShield("set10")
 }
 
 def sync() {
