@@ -29,7 +29,7 @@ definition(
 	parent: "johnlcox:Smart Sump Pump",
 	category: "Convenience",
 	iconUrl: "",
-	iconX2Url: ""
+	iconX2Url: "",
 	importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Smart-Sump-Pump-Child.groovy"
 )
 
