@@ -38,9 +38,10 @@ metadata {
         attribute "wind_gust","number"
         attribute "in_temperature","number"
         attribute "in_humidity","number"
-        //attribute "in_dewpoint","number"
-        //attribute "act_pressure","number"
+        attribute "in_dewpoint","number"
+        attribute "act_pressure","number"
         attribute "sea_pressure","number"
+        attribute "error","string"
         
         /*attribute "system_load","number"
         attribute "system_uptime","number"
@@ -50,10 +51,10 @@ metadata {
         attribute "system_last","number"*/
 
         command "getVersion"
-        command "getPCVersion"
         command "reboot"
         command "initialize"
-
+        command "getData"
+        command "validate"
 	}
     
 	preferences {
@@ -81,8 +82,35 @@ def ping() {
 def initialize() {
     state.clear()
     unschedule()
-    
+       
     schedule("0/${settings.freq} * * * * ? *", ping)
+    
+    schedule("7 0 0 * * ? *", midnight)
+    
+    schedule("7 0/5 8-15 * * ? *", uvsolar)
+    
+    schedule("22 * * * * ? *", day)
+    
+    state.rain_set = false
+}
+
+def uvsolar() {
+    sendEthernet("validate")     
+}
+
+def day() {
+    if (state.rain_day != null) {
+        sendEthernet("midnight|${state.rain_day}")  
+    }
+    else {
+       sendEthernet("midnight|0")   
+    }      
+}
+
+def midnight() {
+    state.rain_day = state.rain_total
+    
+    state.rain_set = true
 }
 
 // parse events into attributes
@@ -127,12 +155,22 @@ def parse(String description) {
             sendEvent(name: 'illuminance', value: part2[2])
             sendEvent(name: 'in_temperature', value: part2[3])
             sendEvent(name: 'in_humidity', value: part2[4])
-            //sendEvent(name: 'in_dewpoint', value: part2[5)
-            //sendEvent(name: 'act_pressure', value: part2[6])
+            sendEvent(name: 'in_dewpoint', value: part2[5])
+            sendEvent(name: 'act_pressure', value: part2[6])
             sendEvent(name: 'sea_pressure', value: part2[7])
             sendEvent(name: 'rain_rate', value: part2[8])
             sendEvent(name: 'rain_total', value: part2[9])
+            state.rain_total = part2[9]
+            if (!state.rain_set) {
+                state.rain_day = state.rain_total
+                state.rain_set = true;
+            }
             sendEvent(name: 'rain_day', value: part2[10])
+        }
+        else if (msg.contains("Error")) {       
+            def part2 = msg.tokenize('|')
+            
+            sendEvent(name: 'error', value: part2[1])
         }
         /*else if (msg.contains("Part3"))   {   
             log.debug(">>>part3")
@@ -194,14 +232,20 @@ def getVersion() {
     sendEthernet("version")
 }
 
-def getPCVersion() {
-	if (showLogs) log.info("Sent to device:  pcversion")
-    
-    sendEthernet("pcversion")
-}
-
 def reboot() {
 	if (showLogs) log.info("Sent to device:  reboot")
     
     sendEthernet("reboot")
+}
+
+def getData() {
+	if (showLogs) log.info("Sent to device:  data")
+    
+    sendEthernet("data")
+}
+
+def validate() {
+	if (showLogs) log.info("Sent to device:  validate")
+    
+    sendEthernet("validate")
 }
