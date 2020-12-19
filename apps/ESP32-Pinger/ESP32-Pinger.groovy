@@ -29,12 +29,15 @@ metadata {
         capability "Refresh"
 		capability "Actuator"
         capability "Switch"
+        capability "PresenceSensor"
 
         command "getVersion"
         command "checkPlex"
         command "checkInternet"
         command "checkPower"
         command "checkBattery"
+        command "checkJohn"
+        command "checkZoe"
         command "statusPlex"
         command "statusInternet"
         command "statusPower"
@@ -42,11 +45,15 @@ metadata {
 		command "reboot"
         command "initialize"
         command "refresh"
+        command "presenceCheck"
+        command "presenceDoNotCheck"
         attribute "plex", "string"
         attribute "internet", "string"
         attribute "power", "string"
         attribute "battery", "string"
         attribute "msg", "string"
+        attribute "john","string"
+        attribute "zoe","string"
     }
     
     preferences {
@@ -60,9 +67,6 @@ metadata {
             input "showLogs", "bool", required: false, title: "Show Debug Logs?", defaultValue: false
     	}
     }
-    
-    main(["pinger"])
-    details(["pinger", "msg", "version"])
 }
 
 def ping() {
@@ -75,6 +79,9 @@ def initialize() {
     state.clear()
     
     schedule("0/${settings.freq} * * * * ? *", ping)
+       
+    state.john = false
+    state.zoe = false
 }
 
 def parse(String description) {          
@@ -83,7 +90,7 @@ def parse(String description) {
     if (showLogs) log.info("description = ${description}")
     
     if (showLogs) log.info("payload = ${msg}")
-	    
+        
     msg = hexToASCII(msg);
     if (showLogs) log.info("message = ${msg}")
 	
@@ -106,7 +113,33 @@ def parse(String description) {
 	       	def part1 = parts[0]
 	  	    def part2 = parts[1].toInteger()
             
-            if (part1 == "battery") {
+            if (part1 == "john") {
+                if (part2 == 1) {
+                    sendEvent(name: "john", value: "present")  
+                    state.john = true
+                }
+                else {
+                    sendEvent(name: "john", value: "not present")  
+                    state.john = false
+                }
+                
+                updatePresence()
+            }
+            
+            else if (part1 == "zoe") {
+                if (part2 == 1) {
+                    sendEvent(name: "zoe", value: "present")   
+                    state.zoe = true
+                }
+                else {
+                    sendEvent(name: "zoe", value: "not present") 
+                    state.zoe = false
+                }
+                
+                updatePresence()
+            } 
+            
+            else if (part1 == "battery") {
                 if (state.power == "okay") {
                     if (part2 == 1) {
                         sendEvent(name: "${part1}", value: "okay, on AC") 
@@ -143,7 +176,7 @@ def parse(String description) {
                     }
                 }
             }
-                       
+                                                         
             sendEvent(name: "msg", value: "${msg}", displayed: true, isStateChange: true, isPhysical: true)  
       	}        
                     
@@ -151,6 +184,15 @@ def parse(String description) {
 			sendEvent(name: "msg", value: "${msg}", displayed: true, isStateChange: true, isPhysical: true)   
 		} 
  	}
+}
+
+def updatePresence() {
+    if (state.john || state.zoe) {
+        sendEvent(name: 'presence', value: "present")
+    }
+    else {
+        sendEvent(name: 'presence', value: "not present")
+    }
 }
 
 private static String hexToASCII(String hexValue) {
@@ -190,6 +232,18 @@ def checkBattery() {
 	if (showLogs) log.debug("Sent to device:  checkBattery")
       
 	sendEthernet("checkBattery")
+}
+
+def checkJohn() {
+	if (showLogs) log.debug("Sent to device:  checkJohn")
+      
+	sendEthernet("checkJohn")
+}
+
+def checkZoe() {
+	if (showLogs) log.debug("Sent to device:  checkZoe")
+      
+	sendEthernet("checkZoe")
 }
 
 def statusPlex() {
@@ -254,4 +308,16 @@ def reboot() {
 	if (showLogs) log.info("Sent to device:  reboot")
     
     sendEthernet("reboot")
+}
+
+def presenceCheck() {
+	if (showLogs) log.info("Sent to device:  presenceCheck")
+    
+    sendEthernet("presenceCheck")
+}
+
+def presenceDoNotCheck() {
+	if (showLogs) log.info("Sent to device:  presenceDoNotCheck")
+    
+    sendEthernet("presenceDoNotCheck")
 }
