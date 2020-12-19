@@ -1,31 +1,13 @@
-/*  Wattvision Manager
-*
-* 2.0.0   	9/28/19    	updated to Hubitat
-*
-* Copyright 2017-20 John Cox
-*
-* Developer retains all right, title, copyright, and interest, including all copyright, patent rights, trade secret in the Background technology.
-* May be subject to consulting fees under the Agreement between the Developer and the Customer. Developer grants a non-exclusive perpetual license
-* to use the Background technology in the Software developed for and delivered to Customer under this Agreement. However, the Customer shall make
-* no commercial use of the Background technology without Developer's written consent.
-* 
-* Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT 
-* WARRANTIES OR CONDITIONS OF ANY KIND, either expressed or implied. 
-*
-* Software Distribution is restricted and shall be done only with Developer's written approval.
-*/
-
 import hubitat.helper.InterfaceUtils
 
 definition(
-    name: "Wattvision Manager",
-    version: "2.0.0",
-    namespace: "smartthings",
-    author: "SmartThings",
-    description: "Monitor your whole-house energy use by connecting to your Wattvision account",
-    iconUrl: "https://s3.amazonaws.com/smartapp-icons/Partner/wattvision.png",
-    iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Partner/wattvision%402x.png",
-    importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Wattvision-Manager.groovy"
+	name: "Wattvision Manager",
+	namespace: "smartthings",
+	author: "SmartThings",
+	description: "Monitor your whole-house energy use by connecting to your Wattvision account",
+	iconUrl: "https://s3.amazonaws.com/smartapp-icons/Partner/wattvision.png",
+	iconX2Url: "https://s3.amazonaws.com/smartapp-icons/Partner/wattvision%402x.png",
+importUrl: "https://raw.githubusercontent.com/johnlcoxjr/Hubitat/master/Apps/Wattvision-Manager.groovy"
 )
 
 preferences {
